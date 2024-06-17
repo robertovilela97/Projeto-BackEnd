@@ -56,3 +56,75 @@ Para verificar as informações dentro do DBeaver, utilize os seguintes scripts:
 SELECT * FROM ponto_interesse;  // Para verificar todos os pontos cadastrados no sistema.
 
 SELECT * FROM log_ponto_interesse;  // Para verificar todos os logs dos pontos de interesse.
+
+
+
+Estrutura do Projeto
+
+Este projeto é organizado em vários arquivos para garantir uma separação clara de responsabilidades, o que facilita a manutenção, a colaboração e a escalabilidade. Abaixo está uma descrição dos principais arquivos e suas funções:
+
+ponto_interesse.js: Contém as definições das rotas.
+index.js: Contém as funções que implementam a lógica de negócio.
+swagger.js: Contém a configuração do Swagger, que é usado para documentar e testar a API.
+db.js: Configura a conexão com o banco de dados.
+app.js: Responsável pela inicialização do projeto.
+constants.js: Contém todas as mensagens de erro, centralizando-as para uso em todo o sistema.
+
+Motivação para a Separação
+
+1. Organização e Manutenibilidade:
+
+Rotas (ponto_interesse.js) e Lógica de Negócio (index.js):
+
+Separar as rotas da lógica de negócio ajuda a manter o código mais organizado. Isso facilita a leitura e a manutenção do projeto, pois cada arquivo tem uma responsabilidade clara.
+Com essa separação, fica mais fácil localizar e atualizar o código. Se precisar adicionar ou modificar uma rota, você sabe que isso será feito no arquivo ponto_interesse.js. Da mesma forma, se precisar alterar a lógica de uma função, isso será feito no arquivo index.js.
+
+Documentação da API (swagger.js):
+
+Manter a configuração do Swagger em um arquivo separado ajuda a manter a documentação da API organizada e atualizada. Isso facilita a vida dos desenvolvedores que precisam entender e testar a API.
+
+Configuração do Banco de Dados (db.js):
+
+Separar a configuração do banco de dados permite que a conexão e as configurações relacionadas sejam gerenciadas de forma centralizada, facilitando ajustes e manutenções.
+
+Inicialização do Projeto (app.js):
+
+Manter a inicialização do servidor em um arquivo dedicado permite que o processo de bootstrap da aplicação seja claro e fácil de gerenciar. Todas as configurações iniciais, como middleware, conexões de banco de dados e inicialização de rotas, são feitas em um único lugar.
+
+Mensagens de Erro (constants.js):
+
+Centralizar todas as mensagens de erro em um arquivo separado ajuda a manter a consistência das mensagens retornadas ao usuário. Isso facilita a manutenção, pois qualquer alteração nas mensagens pode ser feita em um único lugar.
+
+2. Reutilização de Código:
+
+Funções (index.js):
+
+Funções que não estão diretamente ligadas às rotas podem ser reutilizadas em diferentes partes do projeto ou até em outros projetos. Mantê-las em um arquivo separado facilita essa reutilização.
+
+3. Testabilidade:
+
+Módulos Separados:
+
+Funções e configurações separadas em módulos distintos são mais fáceis de testar isoladamente. Você pode criar testes unitários para as funções no index.js sem depender das rotas.
+Da mesma forma, testes das rotas podem focar apenas na integração e no comportamento esperado, sem se preocupar com a implementação detalhada das funções.
+Testes de configuração de banco de dados e inicialização do servidor também se tornam mais gerenciáveis com essa separação.
+
+4. Colaboração:
+
+Trabalho em Equipe:
+
+Em equipes de desenvolvimento, a separação de responsabilidades permite que diferentes membros da equipe trabalhem simultaneamente em diferentes partes do projeto. Por exemplo, um desenvolvedor pode trabalhar na lógica de negócio enquanto outro trabalha na documentação da API ou na configuração do banco de dados.
+
+
+Estrutura de Arquivos
+
+/Projeto
+    /api
+        /routes
+            ├── ponto_interesse.js    # Definições das rotas
+        ├── index.js              # Funções que implementam a lógica de negócio
+        ├── swagger.js            # Configuração do Swagger
+    /Aplicativo
+        ├── db.js                 # Configuração do banco de dados
+        └── app.js                # Inicialização do projeto
+        └── constants.js
