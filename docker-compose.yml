@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    command: npm start
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    environment:
+      - DB_HOST=postgres
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=DesafioBackend
+      - DB_PORT=5432
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: postgres-article
+    image: postgres
+    environment:
+      POSTGRES_DB: DesafioBackend  # Nome do seu banco de dados
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
