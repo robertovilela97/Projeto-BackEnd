@@ -330,11 +330,11 @@ async function deletarFisicoPontoInteresse(id) {
 }
 //#endregion
 
-// Função para buscar coordenadas (latitude e longitude) a partir de um endere�o usando o servi�o Nominatim
+// Função para buscar coordenadas (latitude e longitude) a partir de um endereço usando o serviço Nominatim
 //#region
 async function buscarCoordenadasNominatim(dados) {
     try {
-        // Montar o endere�o completo
+        // Montar o endereço completo
         const address = `${dados.street}, ${dados.city}, ${dados.state}`;
 
         const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`;

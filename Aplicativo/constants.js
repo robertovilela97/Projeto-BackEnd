@@ -26,6 +26,6 @@ module.exports = {
     ERROR_CALCULATING_RADIUS: "Erro ao calcular pontos de interesse no raio:",
     ERROR_SEEARCH_COORDINATES: "Erro ao buscar coordenadas:",
     NO_RESULTS: "Nenhum resultado encontrado para o endereço fornecido.",
-
+    
     //#endregion
 };

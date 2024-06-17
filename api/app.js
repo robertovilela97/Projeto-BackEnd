@@ -1,6 +1,6 @@
 //app
 const express = require('express');
-const swaggerConfig = require('./swagger'); // Importa a configura��o do Swagger
+const swaggerConfig = require('./swagger'); // Importa a configuração do Swagger
 const cors = require('cors');
 const pontosInteresseRouter = require('./routes/ponto_interesse'); // Importa o roteador dos pontos de interesse
 

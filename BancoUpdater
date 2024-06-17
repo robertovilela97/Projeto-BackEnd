@@ -1,0 +1,28 @@
+//Tabelas para serem criadas no banco de dados PostgreSQL
+
+/*
+//Script para criar a tabela ponto_interesse
+
+create table ponto_interesse (
+id serial NOT NULL,
+name varchar not null,
+street varchar not null,
+number int not null,
+neighborhood varchar not null,
+state varchar not null,
+city varchar not null,
+ativo bool not null default true,
+latitude numeric not null,
+longitude numeric not null);
+
+
+//Script para criar a tabela log_ponto_interesse
+
+create table log_ponto_interesse (
+id serial NOT NULL,
+registration_id int,
+name varchar,
+description varchar,
+date_time TIMESTAMP WITHOUT TIME ZONE);
+
+*/

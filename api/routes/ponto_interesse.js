@@ -82,7 +82,7 @@ router.post('/Import', upload.single('arquivo'), async (req, res) => {
  *       200:
  *         description: Ponto de interesse criado com sucesso.
  *       400:
- *         description: Dados inv�lidos fornecidos.
+ *         description: Dados inválidos fornecidos.
  *       500:
  *         description: Erro ao criar ponto de interesse.
  */
@@ -155,26 +155,26 @@ router.get('/Read', async (req, res) => {
  * @swagger
  * /api/ponto_interesse/Radius:
  *   get:
- *     summary: Retorna pontos de interesse dentro de um raio espec�fico.
+ *     summary: Retorna pontos de interesse dentro de um raio específico.
  *     parameters:
  *       - in: query
  *         name: latitude
  *         required: true
  *         schema:
  *           type: number
- *         description: Latitude do ponto de refer�ncia.
+ *         description: Latitude do ponto de referência.
  *       - in: query
  *         name: longitude
  *         required: true
  *         schema:
  *           type: number
- *         description: Longitude do ponto de refer�ncia.
+ *         description: Longitude do ponto de referência.
  *       - in: query
  *         name: raio
  *         required: true
  *         schema:
  *           type: number
- *         description: Raio em quil�metros.
+ *         description: Raio em quilômetros.
  *       - in: query
  *         name: status
  *         required: false
@@ -186,7 +186,7 @@ router.get('/Read', async (req, res) => {
  *       200:
  *         description: Lista de pontos de interesse dentro do raio especificado.
  *       400:
- *         description: Dados inv�lidos fornecidos.
+ *         description: Dados inválidos fornecidos.
  *       500:
  *         description: Erro ao buscar pontos de interesse.
  */
@@ -245,9 +245,9 @@ router.get('/Radius', async (req, res) => {
  *       200:
  *         description: Ponto de interesse atualizado com sucesso.
  *       400:
- *         description: Dados inv�lidos fornecidos.
+ *         description: Dados inválidos fornecidos.
  *       404:
- *         description: Ponto de interesse n�o encontrado.
+ *         description: Ponto de interesse não encontrado.
  *       500:
  *         description: Erro ao atualizar ponto de interesse.
  */
@@ -271,7 +271,7 @@ router.put('/Update:id', async (req, res) => {
 
     try {
 
-        // Buscar coordenadas usando a fun��o buscarCoordenadasNominatim
+        // Buscar coordenadas usando a função buscarCoordenadasNominatim
         const coordenadas = await buscarCoordenadasNominatim(dados);
 
         // Adicionar latitude e longitude aos dados do ponto de interesse
@@ -316,7 +316,7 @@ router.put('/Update:id', async (req, res) => {
  *       200:
  *         description: Ponto de interesse inativado com sucesso.
  *       404:
- *         description: Ponto de interesse n�o encontrado.
+ *         description: Ponto de interesse não encontrado.
  *       500:
  *         description: Erro ao inativar ponto de interesse.
  */
