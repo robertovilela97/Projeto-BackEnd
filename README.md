@@ -1,5 +1,7 @@
 # Projeto-BackEnd
 
+Para melhor visualização, utilize o formato Code no GitHub web ou abra no projeto clonado da máquina.
+
 Programas Utilizados
 
 Visual Studio Code
