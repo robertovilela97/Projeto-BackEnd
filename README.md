@@ -19,9 +19,13 @@ Obs.: Utilize os dois scripts no banco recém-criado. Os scripts estão no arqui
 3. Alterar os dados no arquivo .env dentro do projeto. Os dados necessários são:
 
 DB_HOST="test" // Host do banco (normalmente "localhost")
+
 DB_USER="test" // Nome do usuário
+
 DB_PASSWORD="test" // Senha do PostgreSQL
+
 DB_NAME="test" // Nome do banco
+
 DB_PORT="test" // Porta do banco (normalmente "5432")
 
 4. Iniciar o servidor
@@ -121,12 +125,21 @@ Em equipes de desenvolvimento, a separação de responsabilidades permite que di
 ## Estrutura de Arquivos
 
 /Projeto
+
     /api
+    
         /routes
+        
             ├── ponto_interesse.js    # Definições das rotas
+            
         ├── index.js              # Funções que implementam a lógica de negócio
+        
         ├── swagger.js            # Configuração do Swagger
+        
     /Aplicativo
+    
         ├── db.js                 # Configuração do banco de dados
+        
         └── app.js                # Inicialização do projeto
+        
         └── constants.js
